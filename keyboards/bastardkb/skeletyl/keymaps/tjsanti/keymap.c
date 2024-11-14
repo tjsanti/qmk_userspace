@@ -29,6 +29,7 @@ enum layer_names {
     _NAV
 };
 
+
 // Define each combo key pair and the corresponding output
 enum combo_events {
     COMBO_RS_BSPC,
@@ -67,6 +68,26 @@ combo_t key_combos[COMBO_LENGTH] = {
     [COMBO_IH_QUESTION] = COMBO(combo_ih_question, KC_QUES),
     [COMBO_AT_CAPSWORD] = COMBO(combo_at_capsword, CW_TOGG)
 };
+
+bool get_combo_must_tap(uint16_t index, combo_t *combo) {
+    // If you want all combos to be tap-only, uncomment the next line
+    // return true;
+
+    // If you want *all* combos that have Mod-Tap/Layer-Tap/Momentary keys in their chord to be tap-only, this is for you:
+    uint16_t key;
+    uint8_t idx = 0;
+    while ((key = pgm_read_word(&combo->keys[idx])) != COMBO_END) {
+        switch (key) {
+            case QK_MOD_TAP...QK_MOD_TAP_MAX:
+            case QK_LAYER_TAP...QK_LAYER_TAP_MAX:
+            case QK_MOMENTARY...QK_MOMENTARY_MAX:
+                return true;
+        }
+        idx += 1;
+    }
+    return false;
+}
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
