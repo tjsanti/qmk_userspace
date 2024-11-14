@@ -34,8 +34,8 @@ enum layer_names {
 enum combo_events {
     COMBO_RS_BSPC,
     COMBO_SN_TAB,
-    COMBO_LC_COPY,
-    COMBO_XO_CUT,
+    COMBO_NT_COPY,
+    COMBO_MG_CUT,
     COMBO_DV_PASTE,
     COMBO_ZW_UNDO,
     COMBO_AE_UNDERSCORE,
@@ -47,8 +47,8 @@ enum combo_events {
 
 const uint16_t PROGMEM combo_rs_bspc[] = {WIN_T(KC_R), ALT_T(KC_S), COMBO_END};
 const uint16_t PROGMEM combo_sn_tab[] = {ALT_T(KC_S), CTL_T(KC_N), COMBO_END};
-const uint16_t PROGMEM combo_lc_copy[] = {KC_L, KC_C, COMBO_END};
-const uint16_t PROGMEM combo_xo_cut[] = {KC_X, KC_O, COMBO_END};
+const uint16_t PROGMEM combo_nt_copy[] = {KC_N, KC_T, COMBO_END};
+const uint16_t PROGMEM combo_mg_cut[] = {KC_M, KC_G, COMBO_END};
 const uint16_t PROGMEM combo_dv_paste[] = {KC_D, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_zw_undo[] = {KC_Z, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_ae_underscore[] = {SFT_T(KC_A), CTL_T(KC_E), COMBO_END};
@@ -59,8 +59,8 @@ const uint16_t PROGMEM combo_at_capsword[] = {SFT_T(KC_A), SFT_T(KC_T), COMBO_EN
 combo_t key_combos[COMBO_LENGTH] = {
     [COMBO_RS_BSPC] = COMBO(combo_rs_bspc, KC_BSPC),
     [COMBO_SN_TAB] = COMBO(combo_sn_tab, KC_TAB),
-    [COMBO_LC_COPY] = COMBO(combo_lc_copy, LCTL(KC_C)),
-    [COMBO_XO_CUT] = COMBO(combo_xo_cut, LCTL(KC_X)),
+    [COMBO_NT_COPY] = COMBO(combo_nt_copy, LCTL(KC_C)),
+    [COMBO_MG_CUT] = COMBO(combo_mg_cut, LCTL(KC_X)),
     [COMBO_DV_PASTE] = COMBO(combo_dv_paste, LCTL(KC_V)),
     [COMBO_ZW_UNDO] = COMBO(combo_zw_undo, LCTL(KC_Z)),
     [COMBO_AE_UNDERSCORE] = COMBO(combo_ae_underscore, KC_UNDS),
