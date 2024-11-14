@@ -45,16 +45,16 @@ enum combo_events {
     COMBO_LENGTH
 };
 
-const uint16_t PROGMEM combo_rs_bspc[] = {KC_R, KC_S, COMBO_END};
-const uint16_t PROGMEM combo_sn_tab[] = {KC_S, KC_N, COMBO_END};
+const uint16_t PROGMEM combo_rs_bspc[] = {WIN_T(KC_R), ALT_T(KC_S), COMBO_END};
+const uint16_t PROGMEM combo_sn_tab[] = {ALT_T(KC_S), CTL_T(KC_N), COMBO_END};
 const uint16_t PROGMEM combo_lc_copy[] = {KC_L, KC_C, COMBO_END};
 const uint16_t PROGMEM combo_xo_cut[] = {KC_X, KC_O, COMBO_END};
 const uint16_t PROGMEM combo_dv_paste[] = {KC_D, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_zw_undo[] = {KC_Z, KC_W, COMBO_END};
-const uint16_t PROGMEM combo_ae_underscore[] = {KC_A, KC_E, COMBO_END};
-const uint16_t PROGMEM combo_ei_exclamation[] = {KC_E, KC_I, COMBO_END};
-const uint16_t PROGMEM combo_ih_question[] = {KC_I, KC_H, COMBO_END};
-const uint16_t PROGMEM combo_at_capsword[] = {KC_A, KC_T, COMBO_END};
+const uint16_t PROGMEM combo_ae_underscore[] = {SFT_T(KC_A), CTL_T(KC_E), COMBO_END};
+const uint16_t PROGMEM combo_ei_exclamation[] = {CTL_T(KC_E), ALT_T(KC_I), COMBO_END};
+const uint16_t PROGMEM combo_ih_question[] = {ALT_T(KC_I), WIN_T(KC_H), COMBO_END};
+const uint16_t PROGMEM combo_at_capsword[] = {SFT_T(KC_A), SFT_T(KC_T), COMBO_END};
 
 combo_t key_combos[COMBO_LENGTH] = {
     [COMBO_RS_BSPC] = COMBO(combo_rs_bspc, KC_BSPC),
@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_L,    KC_C,    KC_D,    KC_V,    KC_B,                         KC_X,    KC_O, KC_U,  KC_Y, KC_F, 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LT(_NAV, KC_ENT), KC_SPC,  LT(_NUM, XXXXXXX),     XXXXXXX, LT(_SYM, QK_REP), KC_ESC
+                                          LT(_NAV, KC_ENT), LT(_NUM, KC_SPC),   QK_AREP,     QK_REP, MO(_SYM), KC_ESC
                                       //`--------------------------'  `--------------------------'
 
   ),
