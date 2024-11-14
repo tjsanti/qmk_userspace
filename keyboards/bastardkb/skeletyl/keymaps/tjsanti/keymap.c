@@ -93,13 +93,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ALPHA] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_Z,    KC_W,    KC_M,    KC_G,    KC_Q,                         KC_QUOT,    KC_DOT_COL,    KC_K,    KC_J,   XXXXXXX,
+      KC_Z,           KC_W,           KC_M,           KC_G,           KC_Q,                         XXXXXXX,       KC_DOT_COL,     KC_K,           KC_J,        KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       WIN_T(KC_R),    ALT_T(KC_S),    CTL_T(KC_N),    SFT_T(KC_T),    KC_P,                         KC_COM_SEM,    SFT_T(KC_A),    CTL_T(KC_E),    ALT_T(KC_I), WIN_T(KC_H),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_L,    KC_C,    KC_D,    KC_V,    KC_B,                         KC_X,    KC_O, KC_U,  KC_Y, KC_F, 
+      KC_L,           KC_C,           KC_V,           KC_D,           KC_B,                         KC_X,          KC_O,           KC_U,           KC_Y,        KC_F, 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          LT(_NAV, KC_ENT), LT(_NUM, KC_SPC),   QK_AREP,     QK_REP, MO(_SYM), KC_ESC
+                                  LT(_NAV, KC_ENT), LT(_NUM, KC_SPC), QK_AREP,                      QK_REP, MO(_SYM), KC_ESC
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -112,31 +112,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                      KC_MINS,    KC_1,   KC_2,   KC_3,   KC_SLSH,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, _______, XXXXXXX,    XXXXXXX, KC_0, KC_BSPC
+                                  XXXXXXX, _______, XXXXXXX,                      XXXXXXX, KC_0, KC_BSPC
                                       //`--------------------------'  `--------------------------'
   ),
 
   [_SYM] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_LT,   KC_GT, KC_LCBR,  KC_RCBR, KC_GRV,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_LT,   KC_GT,   KC_LCBR, KC_RCBR, KC_GRV,                               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,                      XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,                              XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RWIN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_PIPE, KC_SLSH, KC_LBRC, KC_RBRC, KC_MINS,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_PIPE, KC_SLSH, KC_LBRC, KC_RBRC, KC_MINS,                              XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_BSLS,  _______,  KC_EQL,     XXXXXXX, XXXXXXX, XXXXXXX
+                        KC_BSLS, _______, KC_EQL,                               XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
   [_NAV] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, KC_UP, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,  KC_SPC, _______,     _______, KC_ENT, KC_RALT
+                        KC_LGUI,  KC_SPC, _______,                      _______, KC_ENT, KC_RALT
                                       //`--------------------------'  `--------------------------'
   )
 };
