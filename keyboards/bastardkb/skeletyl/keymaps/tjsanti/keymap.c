@@ -47,7 +47,7 @@ enum combo_events {
 
 const uint16_t PROGMEM combo_rs_bspc[] = {WIN_T(KC_R), ALT_T(KC_S), COMBO_END};
 const uint16_t PROGMEM combo_sn_tab[] = {ALT_T(KC_S), CTL_T(KC_N), COMBO_END};
-const uint16_t PROGMEM combo_nt_copy[] = {KC_N, KC_T, COMBO_END};
+const uint16_t PROGMEM combo_nt_copy[] = {CTL_T(KC_N), SFT_T(KC_T), COMBO_END};
 const uint16_t PROGMEM combo_mg_cut[] = {KC_M, KC_G, COMBO_END};
 const uint16_t PROGMEM combo_dv_paste[] = {KC_D, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_zw_undo[] = {KC_Z, KC_W, COMBO_END};
@@ -157,7 +157,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_COM_SEM:
             if (record->event.pressed) {
                 if (get_mods() & MOD_MASK_SHIFT) {
-                    tap_code16(KC_SCLN);  // Semicolon when shifted
+                    unregister_mods(MOD_MASK_SHIFT);  // Clear shift temporarily
+                    tap_code(KC_SCLN);                // Tap semicolon
+                    register_mods(MOD_MASK_SHIFT);    // Restore shift
                 } else {
                     tap_code(KC_COMM);    // Comma otherwise
                 }
