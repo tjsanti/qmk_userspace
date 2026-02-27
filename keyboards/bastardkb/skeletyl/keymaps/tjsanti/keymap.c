@@ -45,24 +45,24 @@ enum combo_events {
     COMBO_LENGTH
 };
 
-const uint16_t PROGMEM combo_rs_bspc[] = {WIN_T(KC_R), ALT_T(KC_S), COMBO_END};
-const uint16_t PROGMEM combo_sn_tab[] = {ALT_T(KC_S), CTL_T(KC_N), COMBO_END};
-const uint16_t PROGMEM combo_nt_copy[] = {CTL_T(KC_N), SFT_T(KC_T), COMBO_END};
+const uint16_t PROGMEM combo_rs_bspc[] = {ALT_T(KC_R), CTL_T(KC_S), COMBO_END};
+const uint16_t PROGMEM combo_sn_tab[] = {CTL_T(KC_S), GUI_T(KC_N), COMBO_END};
+const uint16_t PROGMEM combo_nt_copy[] = {GUI_T(KC_N), SFT_T(KC_T), COMBO_END};
 const uint16_t PROGMEM combo_mg_cut[] = {KC_M, KC_G, COMBO_END};
 const uint16_t PROGMEM combo_dv_paste[] = {KC_D, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_zw_undo[] = {KC_Z, KC_W, COMBO_END};
-const uint16_t PROGMEM combo_ae_underscore[] = {SFT_T(KC_A), CTL_T(KC_E), COMBO_END};
-const uint16_t PROGMEM combo_ei_exclamation[] = {CTL_T(KC_E), ALT_T(KC_I), COMBO_END};
-const uint16_t PROGMEM combo_ih_question[] = {ALT_T(KC_I), WIN_T(KC_H), COMBO_END};
+const uint16_t PROGMEM combo_ae_underscore[] = {SFT_T(KC_A), GUI_T(KC_E), COMBO_END};
+const uint16_t PROGMEM combo_ei_exclamation[] = {GUI_T(KC_E), CTL_T(KC_I), COMBO_END};
+const uint16_t PROGMEM combo_ih_question[] = {CTL_T(KC_I), ALT_T(KC_H), COMBO_END};
 const uint16_t PROGMEM combo_at_capsword[] = {SFT_T(KC_A), SFT_T(KC_T), COMBO_END};
 
 combo_t key_combos[COMBO_LENGTH] = {
     [COMBO_RS_BSPC] = COMBO(combo_rs_bspc, KC_BSPC),
     [COMBO_SN_TAB] = COMBO(combo_sn_tab, KC_TAB),
-    [COMBO_NT_COPY] = COMBO(combo_nt_copy, LCTL(KC_C)),
-    [COMBO_MG_CUT] = COMBO(combo_mg_cut, LCTL(KC_X)),
-    [COMBO_DV_PASTE] = COMBO(combo_dv_paste, LCTL(KC_V)),
-    [COMBO_ZW_UNDO] = COMBO(combo_zw_undo, LCTL(KC_Z)),
+    [COMBO_NT_COPY] = COMBO(combo_nt_copy, LGUI(KC_C)),
+    [COMBO_MG_CUT] = COMBO(combo_mg_cut, LGUI(KC_X)),
+    [COMBO_DV_PASTE] = COMBO(combo_dv_paste, LGUI(KC_V)),
+    [COMBO_ZW_UNDO] = COMBO(combo_zw_undo, LGUI(KC_Z)),
     [COMBO_AE_UNDERSCORE] = COMBO(combo_ae_underscore, KC_UNDS),
     [COMBO_EI_EXCLAMATION] = COMBO(combo_ei_exclamation, KC_EXLM),
     [COMBO_IH_QUESTION] = COMBO(combo_ih_question, KC_QUES),
@@ -95,11 +95,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_Z,           KC_W,           KC_M,           KC_G,           KC_Q,                         XXXXXXX,       KC_DOT_COL,     KC_K,           KC_J,        KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      WIN_T(KC_R),    ALT_T(KC_S),    CTL_T(KC_N),    SFT_T(KC_T),    KC_P,                         KC_COM_SEM,    SFT_T(KC_A),    CTL_T(KC_E),    ALT_T(KC_I), WIN_T(KC_H),
+      ALT_T(KC_R),    CTL_T(KC_S),    GUI_T(KC_N),    SFT_T(KC_T),    KC_P,                         KC_COM_SEM,    SFT_T(KC_A),    GUI_T(KC_E),    CTL_T(KC_I), ALT_T(KC_H),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_L,           KC_C,           KC_V,           KC_D,           KC_B,                         KC_X,          KC_O,           KC_U,           KC_Y,        KC_F, 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                  LT(_NAV, KC_ENT), LT(_NUM, KC_SPC), QK_AREP,                      QK_REP, MO(_SYM), KC_ESC
+                                  LT(_NAV, KC_ENT), LT(_NUM, KC_SPC), KC_RGUI,                      QK_REP, MO(_SYM), KC_ESC
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX,  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                      KC_PLUS,    KC_7,   KC_8,   KC_9,   KC_ASTR,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LWIN,  KC_LALT,    KC_LCTL,    KC_LSFT,    XXXXXXX,                      _______,    KC_4,   KC_5,   KC_6,   KC_DOT_COL,
+      KC_LALT,  KC_LCTL,    KC_LGUI,    KC_LSFT,    XXXXXXX,                      _______,    KC_4,   KC_5,   KC_6,   KC_DOT_COL,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                      KC_MINS,    KC_1,   KC_2,   KC_3,   KC_SLSH,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -120,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_LT,   KC_GT,   KC_LCBR, KC_RCBR, KC_GRV,                               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,                              XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RWIN,
+      KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,                              XXXXXXX, KC_RSFT, KC_LGUI, KC_RCTL, KC_RALT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_PIPE, KC_SLSH, KC_LBRC, KC_RBRC, KC_MINS,                              XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -136,7 +136,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                        KC_LGUI,  KC_SPC, _______,                      _______, KC_ENT, KC_RALT
+                        KC_LALT,  KC_SPC, _______,                      _______, KC_ENT, KC_RCTL
                                       //`--------------------------'  `--------------------------'
   )
 };
