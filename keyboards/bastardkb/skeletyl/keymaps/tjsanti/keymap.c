@@ -93,13 +93,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ALPHA] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_Z,           KC_W,           KC_M,           KC_G,           KC_Q,                         XXXXXXX,       KC_DOT_COL,     KC_K,           KC_J,        KC_QUOT,
+      KC_Z,           KC_W,           KC_M,           KC_G,           KC_Q,                         HYPR(KC_W),    KC_DOT_COL,     KC_K,           KC_J,        KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       ALT_T(KC_R),    CTL_T(KC_S),    GUI_T(KC_N),    SFT_T(KC_T),    KC_P,                         KC_COM_SEM,    SFT_T(KC_A),    GUI_T(KC_E),    CTL_T(KC_I), ALT_T(KC_H),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_L,           KC_C,           KC_V,           KC_D,           KC_B,                         KC_X,          KC_O,           KC_U,           KC_Y,        KC_F, 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                  LT(_NAV, KC_ENT), LT(_NUM, KC_SPC), KC_RGUI,                      QK_REP, MO(_SYM), KC_ESC
+                                  LT(_NAV, KC_ENT), LT(_NUM, KC_SPC), KC_RGUI,                      KC_HYPR, MO(_SYM), KC_ESC
                                       //`--------------------------'  `--------------------------'
 
   ),
